@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body class="flex h-screen w-full items-center justify-center font-ubuntu">
+    <!--* Container -->
+    <main
+      class="flex h-full w-full flex-col bg-magnolia md:max-h-[700px] md:max-w-[1000px] md:flex-row md:rounded-xl md:border md:px-4"
+    >
+      <!--* Side bar -->
+      <div
+        class="z-0 flex h-[250px] w-full items-start justify-center bg-bg-image-mobile bg-cover bg-no-repeat pt-12 md:my-8 md:h-auto md:w-[400px] md:rounded-xl md:bg-bg-image-desktop"
+      >
+        <!-- steps container -->
+        <div class="flex gap-4">
+          <!-- Steps circles -->
+          <div
+            class="flex h-auto w-full items-start justify-center gap-8 md:w-auto md:flex-col"
+          >
+            <div
+              class="active bg-transparent flex h-12 w-12 items-center justify-center rounded-full border p-2 font-semibold text-whiteNeutral"
+            >
+              <span>1</span>
+            </div>
+            <div
+              class="bg-transparent text-white flex h-12 w-12 items-center justify-center rounded-full border p-2 font-semibold text-whiteNeutral"
+            >
+              <span>2</span>
+            </div>
+            <div
+              class="bg-transparent text-white flex h-12 w-12 items-center justify-center rounded-full border p-2 font-semibold text-whiteNeutral"
+            >
+              <span>3</span>
+            </div>
+            <div
+              class="bg-transparent text-white flex h-12 w-12 items-center justify-center rounded-full border p-2 font-semibold text-whiteNeutral"
+            >
+              <span>4</span>
+            </div>
+          </div>
+          <!-- Steps text -->
+          <div class="hidden flex-col gap-8 md:flex">
+            <!-- Step 1 -->
+            <div>
+              <span class="text-xs font-bold text-coolGray">STEP 1</span>
+              <h2 class="font-bold text-whiteNeutral">YOUR INFO</h2>
+            </div>
+            <!-- Step 2 -->
+            <div>
+              <span class="text-xs font-bold text-coolGray">STEP 2</span>
+              <h2 class="font-bold text-whiteNeutral">SELECT PLAN</h2>
+            </div>
+            <!-- Step 3 -->
+            <div>
+              <span class="text-xs font-bold text-coolGray">STEP 3</span>
+              <h2 class="font-bold text-whiteNeutral">ADD-ONS</h2>
+            </div>
+            <!-- Step 4 -->
+            <div>
+              <span class="text-xs font-bold text-coolGray">STEP 4</span>
+              <h2 class="font-bold text-whiteNeutral">SUMMARY</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steps end -->
+      </div>
+      <!-- Side bar end -->
+      <!--* Info Card Container -->
+      <div class="relative h-auto w-full md:my-8 md:rounded-xl">
+        <!--* Step #1 Card content -->
+        <form
+          id="step-1"
+          action="/submit"
+          method="post"
+          class="step absolute left-[50%] top-[-6rem] z-50 flex h-auto w-[450px] translate-x-[-50%] flex-col rounded-xl bg-whiteNeutral px-6 py-10 shadow-2xl md:top-0 md:h-full md:w-full md:px-16 md:shadow-none"
+        >
+          <!-- form title and info -->
+          <h1 class="pb-4 text-2xl font-bold text-marineBlue">Personal info</h1>
+          <p class="max-w-xs pb-6 text-coolGray md:max-w-full md:pb-8">
+            Please provide your name, email, address, and phone number.
+          </p>
+          <div class="flex flex-col pb-6">
+            <label class="pb-1 text-sm font-bold text-marineBlue" for="name"
+              >Name</label
+            >
+            <input
+              class="rounded-md border p-2 font-semibold text-coolGray/50 placeholder:text-sm placeholder:text-coolGray/50"
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Stephen King"
+            />
+          </div>
+          <div class="flex flex-col pb-6">
+            <label class="pb-1 text-sm font-bold text-marineBlue" for="email"
+              >Email Address</label
+            >
+            <input
+              class="rounded-md border p-2 font-semibold text-coolGray/50 placeholder:text-sm placeholder:text-coolGray/50"
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="stephenking@lorem.com"
+            />
+          </div>
+          <div class="flex flex-col pb-6">
+            <label class="pb-1 text-sm font-bold text-marineBlue" for="phone"
+              >Phone Number</label
+            >
+            <input
+              class="rounded-md border p-2 font-semibold text-coolGray/50 placeholder:text-sm placeholder:text-coolGray/50"
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="+1 234 567 890"
+            />
+          </div>
+          <!--* Submit button -->
+          <div
+            class="absolute bottom-[-20rem] right-0 my-12 flex h-auto w-32 flex-col shadow-xl md:bottom-12 md:right-16 md:my-0 md:h-auto md:w-32"
+          >
+            <input
+              onclick="nextStep(2)"
+              type="submit"
+              value="Next Step"
+              class="cursor-pointer rounded-md bg-marineBlue px-6 py-4 font-semibold text-whiteNeutral hover:bg-purplishBlue md:w-32"
+            />
+          </div>
+        </form>
+        <!--* Step #1 Card content end -->
+        <!--* Step #2 Card content -->
+        <div
+          id="step-2"
+          class="absolute left-[50%] top-[-6rem] z-50 flex h-auto w-[450px] translate-x-[-50%] flex-col rounded-xl bg-whiteNeutral px-6 py-10 shadow-2xl md:top-0 md:h-full md:w-full md:px-16 md:shadow-none"
+        >
+          <h1 class="pb-4 text-2xl font-bold text-marineBlue">
+            Select your plan
+          </h1>
+          <p class="max-w-xs pb-6 text-coolGray md:max-w-full md:pb-8">
+            You hava the option of monthly or yearly billing.
+          </p>
+          <!-- Plans container -->
+          <div class="flex flex-col gap-4 md:flex-row">
+            <div
+              class="flex items-center justify-center rounded-lg border border-coolGray/50 p-4 shadow-md md:w-[200px] md:flex-col md:gap-4 md:p-8"
+            >
+              <span
+                class="h-12 w-12 bg-logo-arcade bg-cover bg-no-repeat p-2"
+              ></span>
+              <div class="ml-4">
+                <h2 class="font-bold text-marineBlue">Arcade</h2>
+                <small class="font-semibold text-coolGray">$9/mo</small>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center rounded-lg border border-coolGray/50 p-4 shadow-md md:w-[200px] md:flex-col md:gap-4 md:p-8"
+            >
+              <span
+                class="h-12 w-12 bg-logo-advance bg-cover bg-no-repeat p-2"
+              ></span>
+              <div class="ml-4">
+                <h2 class="font-bold text-marineBlue">Advance</h2>
+                <small class="font-semibold text-coolGray">$12/mo</small>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center rounded-lg border border-coolGray/50 p-4 shadow-md md:w-[200px] md:flex-col md:gap-4 md:p-8"
+            >
+              <span
+                class="h-12 w-12 bg-logo-pro bg-cover bg-no-repeat p-2"
+              ></span>
+              <div class="ml-4">
+                <h2 class="font-bold text-marineBlue">Pro</h2>
+                <small class="font-semibold text-coolGray">$15/mo</small>
+              </div>
+            </div>
+          </div>
+          <!-- Toggle switcher -->
+          <div class="flex items-center justify-center py-12">
+            <span class="text-sm font-bold text-coolGray">Monthly</span>
+            <input type="checkbox" id="switch" />
+            <label class="mx-4" for="switch"></label>
+            <span class="text-sm font-bold text-coolGray">Yearly</span>
+          </div>
+          <!--* Progress buttons bar  -->
+          <div
+            class="z-50 flex h-auto w-full items-center justify-between px-8 md:mt-16 md:w-[100%] md:px-2"
+          >
+            <button
+              type="button"
+              onclick="prevStep(1)"
+              class="cursor-pointer font-bold text-coolGray transition-colors duration-300 hover:text-marineBlue"
+            >
+              Go Back
+            </button>
+            <button
+              type="button"
+              onclick="nextStep(3)"
+              class="rounded-lg bg-marineBlue px-8 py-4 font-bold text-whiteNeutral transition-colors duration-300 hover:bg-purplishBlue"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
+        <!--* Step #2 Card content end -->
+      </div>
+
+      <div
+        class="attribution text-slate-500/50f absolute bottom-0 left-[50%] flex w-[100%] translate-x-[-50%] justify-center text-sm font-semibold"
+      >
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Denis</a>.
+      </div>
+    </main>
+    <!-- Container end -->
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

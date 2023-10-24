@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <!-- Container -->
+    <div
+      class="relative flex h-[100vh] w-full bg-charcoalGrey md:items-center md:justify-center"
+    >
+      <!-- Form -->
+      <form
+        action="submit"
+        id="form"
+        class="flex flex-col bg-white md:h-[700px] md:w-[1000px] md:flex-row-reverse md:rounded-3xl"
+      >
+        <!-- Image container -->
+        <div
+          class="image-container h-[40%] w-full overflow-hidden rounded-b-3xl shadow-large md:h-[100%] md:w-[32rem] md:shadow-none"
+        >
+          <img
+            class="m-0 h-full w-full object-cover p-0 md:px-6 md:py-4"
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="NewsletterImage"
+          />
+        </div>
+        <!-- Image container End -->
+        <!-- Text and Form Content -->
+        <div class="content px-6 py-8 text-charcoalGrey md:px-8 md:pt-16">
+          <h1 class="title pb-4 text-title font-bold">Stay updated!</h1>
+          <p class="pb-8 text-normal">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="pb-8 text-normal">
+            <li class="flex items-start pb-4">
+              <span class="pr-4"
+                ><img
+                  class="h-7 w-7 rounded-full bg-tomato shadow-large"
+                  src="./assets/images/icon-list.svg"
+                  alt="icon"
+              /></span>
+              <p class="max-w-sm">
+                Product discovery and building what matters
+              </p>
+            </li>
+            <li class="flex items-start pb-4">
+              <span class="pr-4"
+                ><img
+                  class="h-7 w-7 rounded-full bg-tomato shadow-large"
+                  src="./assets/images/icon-list.svg"
+                  alt="icon"
+              /></span>
+              <p class="max-w-sm">Measuring to ensure updates are a success</p>
+            </li>
+            <li class="flex items-start pb-4">
+              <span class="pr-4"
+                ><img
+                  class="h-7 w-7 rounded-full bg-tomato shadow-large"
+                  src="./assets/images/icon-list.svg"
+                  alt="icon"
+              /></span>
+              <p class="max-w-sm">And much more!</p>
+            </li>
+          </ul>
+
+          <div class="flex flex-col pb-8">
+            <label class="pb-2 text-small font-semibold" for="email"
+              >Email address
+            </label>
+            <input
+              name="email"
+              class="shadow-normal-inset rounded-md border border-grey px-8 py-4"
+              type="email"
+              placeholder="email@company.com"
+              required
+            />
+            <button
+              type="submit"
+              id="subscribe-btn"
+              class="w-full rounded-xl bg-darkSlateGrey px-8 py-4 text-normal text-white transition-all duration-500 hover:bg-gradient-to-r hover:from-redOne hover:via-redTwo hover:to-redThree hover:shadow-large md:mt-16"
+            >
+              Subscribe to monthly newsletter
+            </button>
+          </div>
+        </div>
+      </form>
+      <!-- Form End -->
+      <!-- Message -->
+      <div
+        id="confirmation-message"
+        class="z-10 hidden h-full bg-white px-8 py-8 md:h-[600px] md:w-[600px] md:rounded-3xl md:p-12"
+      >
+        <div class="pt-32 md:pt-0">
+          <img
+            class="h-16 w-16 rounded-full bg-tomato shadow-large"
+            src="./assets/images/icon-list.svg"
+            alt="icon"
+          />
+        </div>
+        <h1 class="py-8 text-title font-bold leading-tight text-darkSlateGrey">
+          Thanks for subscribing!
+        </h1>
+        <p class="pb-16 text-normal text-darkSlateGrey md:pb-0">
+          A confirmation email has been sent to
+          <span class="font-bold">ash@loremcompany.com.</span> Please open it
+          and click the button inside to confirm your subscription.
+        </p>
+        <button
+          id="dismiss-btn"
+          class="mt-64 w-full items-end justify-center rounded-xl bg-darkSlateGrey py-4 text-normal text-white transition-all duration-500 hover:bg-tomato hover:shadow-large md:mt-12"
+        >
+          Dismiss message
+        </button>
+      </div>
+      <!-- <div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+			<a href="#">Denis Ulate</a>.
+		</div> -->
+    </div>
+    <!-- Container End -->
+  </body>
+</html>
